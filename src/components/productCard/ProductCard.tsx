@@ -9,8 +9,7 @@ const ProductCard = (props: {
     id: number;
   };
 }) => {
-  const { title, image, price, rating, category, description, id } =
-    props.product;
+  const { title, image, price, category, id } = props.product;
 
   const addClickHandler = () => {
     console.log(id);
@@ -21,9 +20,14 @@ const ProductCard = (props: {
       <div className="card">
         <h1 className="card__text">{category}</h1>
         <img className="card__img" src={image} />
-        <p className="card__head-text">{title}</p>
-        <p className="card__text">{price}$</p>
-        <button onClick={addClickHandler}>Add to cart</button>
+        <div className="card__price-container">
+          <p className="card__head-text">{title}</p>
+          <p className="card__price">{price}$</p>
+        </div>
+
+        <button className="card__btn" onClick={addClickHandler}>
+          Add to cart
+        </button>
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 .card {
+  position: relative;
   width: 30%;
   min-height: 500px;
   text-align: center;
@@ -7,14 +8,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: 0 30px;
   border-radius: 30px;
 
   &__head-text {
     display: flex;
     align-items: center;
-    font-size: 18px;
-    height: 15%;
+    font-size: 14px;
+    max-width: 250px;
   }
   &__img {
     background-size: cover;
@@ -25,6 +26,34 @@
   }
 
   &__text {
-    padding: 5px;
+    padding: 20px;
+  }
+
+  &__price {
+    font-size: 20px;
+  }
+
+  &__price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 80px;
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 3%;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #088395;
+    color: white;
+
+    cursor: pointer;
+    &:hover {
+      background-color: darken($color: #088395, $amount: 5);
+    }
   }
 }
